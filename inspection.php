@@ -109,7 +109,7 @@
 
     <div class="mt-3" style="background-color: #A7E58D; width: 100%; text-align: center; padding: 20px 0;  display: flex; justify-content: space-between; align-items: center;">
         <h2 style="margin: 0; margin: auto;">Airside Area</h2>
-        <button class="btn me-5" style="background-color: #00BF63; color: #ffffff;">Reporting</button>
+        <a href="reporting.php" class="btn btn-primary me-3">Reporting</a>
     </div>
 
     <!-- end content airside area -->
@@ -134,12 +134,12 @@
         <form action="" method="post" id="runwayForm">
             <div class="form-table">
                 <div class="ms-5">
-                    <label for="datepicker">Tanggal:</label>
-                    <input type="date" id="datepicker" name="datepicker">
+                    <label for="datepicker" class="form-label mb-3">Tanggal:</label>
+                    <input type="date" id="datepicker" name="datepicker" class="form-control">
                 </div>
                 <div class="me-5">
-                    <label for="timepicker">Waktu:</label>
-                    <input type="time" id="timepicker" name="timepicker">
+                    <label for="timepicker" class="form-label mb-3">Waktu:</label>
+                    <input type="time" id="timepicker" name="timepicker" class="form-control">
                 </div>
             </div>
             <div class="row m-4">
@@ -249,23 +249,10 @@
                     <td><input class="form-control" type="text"></td>
                 </tr>
             </table>
-            <table class="m-4">
-                <tr>
-                    <td><label for="caregories" class="form-label">Categories</label></td>
-                    <td><input class="form-control" type="text" id="caregories" name="caregories"></td>
-                </tr>
-                <tr>
-                    <td><label for="location" class="form-label">Location</label></td>
-                    <td><input class="form-control" type="text" id="location" name="location"></td>
-                </tr>
-                <tr>
-                    <td><label for="reportby" class="form-label">Report by</label></td>
-                    <td><input class="form-control" type="text" id="reportby" name="reportby"></td>
-                </tr>
-            </table>
+
 
             <button type="submit" class="btn btn-secondary ms-4">
-                <h5>Reporting</h5>
+                <h5>Submit</h5>
             </button>
         </form>
     </div>
@@ -277,12 +264,12 @@
         <h5 class="ms-5">Taxiway</h5>
         <div class="form-table">
             <div class="ms-5">
-                <label for="datepicker">Tanggal:</label>
-                <input type="date" id="datepicker" name="datepicker">
+                <label for="datepicker" class="form-label mb-3">Tanggal:</label>
+                <input type="date" id="datepicker" name="datepicker" class="form-control">
             </div>
             <div class="me-5">
-                <label for="timepicker">Waktu:</label>
-                <input type="time" id="timepicker" name="timepicker">
+                <label for="timepicker" class="form-label mb-3">Waktu:</label>
+                <input type="time" id="timepicker" name="timepicker" class="form-control">
             </div>
         </div>
         <div class="row m-4">
@@ -400,23 +387,10 @@
                 <td><input type="text"></td>
             </tr>
         </table>
-        <table class="m-4">
-            <tr>
-                <td><label for="caregories" class="form-label">Categories</label></td>
-                <td><input class="form-control" type="text" id="caregories" name="caregories"></td>
-            </tr>
-            <tr>
-                <td><label for="location" class="form-label">Location</label></td>
-                <td><input class="form-control" type="text" id="location" name="location"></td>
-            </tr>
-            <tr>
-                <td><label for="reportby" class="form-label">Report by</label></td>
-                <td><input class="form-control" type="text" id="reportby" name="reportby"></td>
-            </tr>
-        </table>
+
 
         <button type="submit" class="btn btn-secondary ms-4">
-            <h5>Reporting</h5>
+            <h5>Submit</h5>
         </button>
     </div>
 
@@ -425,12 +399,12 @@
         <h5 class="ms-5">Apron</h5>
         <div class="form-table">
             <div class="ms-5">
-                <label for="datepicker">Tanggal:</label>
-                <input type="date" id="datepicker" name="datepicker">
+                <label for="datepicker" class="form-label mb-3">Tanggal:</label>
+                <input type="date" id="datepicker" name="datepicker" class="form-control">
             </div>
             <div class="me-5">
-                <label for="timepicker">Waktu:</label>
-                <input type="time" id="timepicker" name="timepicker">
+                <label for="timepicker" class="form-label mb-3">Waktu:</label>
+                <input type="time" id="timepicker" name="timepicker" class="form-control">
             </div>
         </div>
         <div class="row m-4">
@@ -539,23 +513,10 @@
                 <td><input type="text"></td>
             </tr>
         </table>
-        <table class="m-4">
-            <tr>
-                <td><label for="caregories" class="form-label">Categories</label></td>
-                <td><input class="form-control" type="text" id="caregories" name="caregories"></td>
-            </tr>
-            <tr>
-                <td><label for="location" class="form-label">Location</label></td>
-                <td><input class="form-control" type="text" id="location" name="location"></td>
-            </tr>
-            <tr>
-                <td><label for="reportby" class="form-label">Report by</label></td>
-                <td><input class="form-control" type="text" id="reportby" name="reportby"></td>
-            </tr>
-        </table>
+
 
         <button type="submit" class="btn btn-secondary ms-4">
-            <h5>Reporting</h5>
+            <h5>Submit</h5>
         </button>
     </div>
     </div>
