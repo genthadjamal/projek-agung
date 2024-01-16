@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,8 +132,8 @@
 
     <!-- content runway-->
     <div id="runwayContent" class="content active-content mt-4">
-        <h5 class="ms-5">Runway</h5>
-        <form action="" method="post" id="runwayForm">
+        <form action="functions.php" id="runwayForm" method="POST" enctype="multipart/form-data">
+            <h5 class="ms-5">Runway</h5>
             <div class="form-table">
                 <div class="ms-5">
                     <label for="datepicker" class="form-label mb-3">Tanggal:</label>
@@ -146,8 +148,8 @@
                 <div class="col-6">
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <h5 class="me-3">Area Runway</h5>
-                        <select class="form-select" id="kondisipermukaan" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="kondisipermukaan" name="area" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="13">13</option>
                             <option value="31">31</option>
                         </select>
@@ -155,32 +157,32 @@
 
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="kondisipermukaan">Kondisi Permukaan</label>
-                        <select class="form-select" id="kondisipermukaan" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="kondisipermukaan" name="kondisipermukaan" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Baik">Baik</option>
                             <option value="Tidak">Tidak</option>
                         </select>
                     </div>
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="marka">Marka</label>
-                        <select class="form-select" id="marka" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="marka" name="marka" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Baik">Baik</option>
                             <option value="Tidak">Tidak</option>
                         </select>
                     </div>
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="fod">FOD</label>
-                        <select class="form-select" id="fod" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="fod" name="fod" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Ada">Ada</option>
                             <option value="Tidak">Tidak</option>
                         </select>
                     </div>
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="rubberdeposit">Rubber Deposit</label>
-                        <select class="form-select" id="marka" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="marka" name="rubber" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Tipis">Tipis</option>
                             <option value="Tebal">Tebal</option>
                         </select>
@@ -190,24 +192,24 @@
                 <div class="col-6">
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="obstacle">Obstacle</label>
-                        <select class="form-select" id="marka" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="marka" name="obstacle" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Ada">Ada</option>
                             <option value="Tidak">Tidak</option>
                         </select>
                     </div>
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="birdstrike">Bird Strike / Wild Animal</label>
-                        <select class="form-select" id="marka" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="marka" name="bird" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Ada">Ada</option>
                             <option value="Tidak">Tidak</option>
                         </select>
                     </div>
                     <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                         <label class="input-group-text" for="pagar">Pagar Perimeter</label>
-                        <select class="form-select" id="marka" style="width: 50%;">
-                            <option selected></option>
+                        <select class="form-select" id="marka" name="pagar" style="width: 50%;">
+                            <option selected disabled></option>
                             <option value="Baik">Baik</option>
                             <option value="Tidak">Tidak</option>
                         </select>
@@ -218,13 +220,13 @@
             <!-- bagian upload -->
             <div class="ms-4">
                 <label class="mb-2"><b>Upload Foto</b></label>
-                <input type="file" class="form-control" id="inputGroupFile01" style="width: 50%;">
+                <input type="file" class="form-control" name="gambar" id="inputGroupFile01" style="width: 50%;">
             </div>
             <!-- akhir bagian upload -->
 
             <!-- awal textarea -->
             <div class="form-floating mt-3 ms-4">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 50%;"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="catatan" style="height: 100px; width: 50%;"></textarea>
                 <label for="floatingTextarea2">Catatan</label>
             </div>
             <!-- akhir textarea -->
@@ -232,8 +234,8 @@
             <!-- hasil inpeksi -->
             <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
                 <label class="input-group-text" for="inputGroupSelect01">Runway</label>
-                <select class="form-select" id="inputGroupSelect01" style="width: 50%;">
-                    <option selected>Choose...</option>
+                <select class="form-select" id="inputGroupSelect01" name="runway" style="width: 50%;">
+                    <option selected disabled>Choose...</option>
                     <option value="1">Serviceable</option>
                     <option value="2">Unserviceable</option>
                 </select>
@@ -246,278 +248,285 @@
                 </tr>
                 <tr>
                     <td>NAMA</td>
-                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text" name="inspektor"></td>
                 </tr>
             </table>
 
 
-            <button type="submit" class="btn btn-secondary ms-4">
+            <button type="submit" name="tambah_runway" class="btn btn-secondary ms-4">
                 <h5>Submit</h5>
             </button>
         </form>
     </div>
     <!-- end content runway -->
 
-
     <!-- taxiway -->
     <div id="taxiwayContent" class="content">
-        <h5 class="ms-5">Taxiway</h5>
-        <div class="form-table">
-            <div class="ms-5">
-                <label for="datepicker" class="form-label mb-3">Tanggal:</label>
-                <input type="date" id="datepicker" name="datepicker" class="form-control">
-            </div>
-            <div class="me-5">
-                <label for="timepicker" class="form-label mb-3">Waktu:</label>
-                <input type="time" id="timepicker" name="timepicker" class="form-control">
-            </div>
-        </div>
-        <div class="row m-4">
-            <div class="col-6">
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <h5 class="me-3">Area Taxiway</h5>
-                    <select class="form-select" id="kondisipermukaan" style="width: 50%;">
-                        <option selected></option>
-                        <option value="13">F</option>
-                        <option value="31">G</option>
-                    </select>
+        <form action="functions.php" id="taxiwayForm" method="POST" enctype="multipart/form-data">
+            <h5 class="ms-5">Taxiway</h5>
+            <div class="form-table">
+                <div class="ms-5">
+                    <label for="datepicker" class="form-label mb-3">Tanggal:</label>
+                    <input type="date" id="datepicker" name="datepicker" class="form-control">
                 </div>
-
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="kondisipermukaan">Kondisi Permukaan</label>
-                    <select class="form-select" id="kondisipermukaan" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="marka">Marka</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="fod">FOD</label>
-                    <select class="form-select" id="fod" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="rubberdeposit">Rubber Deposit</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Tipis">Tipis</option>
-                        <option value="Tebal">Tebal</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="obstacle">Obstacle</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="birdstrike">Bird Strike / Wild Animal</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="pagar">Pagar Perimeter</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
+                <div class="me-5">
+                    <label for="timepicker" class="form-label mb-3">Waktu:</label>
+                    <input type="time" id="timepicker" name="timepicker" class="form-control">
                 </div>
             </div>
-        </div>
+            <div class="row m-4">
+                <div class="col-6">
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <h5 class="me-3">Area Taxiway</h5>
+                        <select class="form-select" id="kondisipermukaan" name="area" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="13">F</option>
+                            <option value="31">G</option>
+                        </select>
+                    </div>
 
-        <!-- upload foto -->
-        <div class="ms-4">
-            <label class="mb-2"><b>Upload Foto Taxiway G</b></label>
-            <input type="file" class="form-control" id="inputGroupFile01" style="width: 50%;">
-        </div>
-        <div class="ms-4">
-            <label class="mb-2"><b>Upload Foto Taxiway F</b></label>
-            <input type="file" class="form-control" id="inputGroupFile01" style="width: 50%;">
-        </div>
-        <!-- end upload -->
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="kondisipermukaan">Kondisi Permukaan</label>
+                        <select class="form-select" id="kondisipermukaan" name="kondisipermukaan" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="marka">Marka</label>
+                        <select class="form-select" id="marka" name="marka" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="fod">FOD</label>
+                        <select class="form-select" id="fod" name="fod" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="rubberdeposit">Rubber Deposit</label>
+                        <select class="form-select" id="marka" name="rubber" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Tipis">Tipis</option>
+                            <option value="Tebal">Tebal</option>
+                        </select>
+                    </div>
 
-        <!-- start catatan -->
-        <div class="form-floating mt-3 ms-4 mb-3">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 50%;"></textarea>
-            <label for="floatingTextarea2">Catatan</label>
-        </div>
-        <!-- end catatan -->
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="obstacle">Obstacle</label>
+                        <select class="form-select" id="marka" name="obstacle" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="birdstrike">Bird Strike / Wild Animal</label>
+                        <select class="form-select" id="marka" name="bird" style="width: 50%;">
+                            <option selected></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="pagar">Pagar Perimeter</label>
+                        <select class="form-select" id="marka" name="pagar" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        <!-- hasil inpeksi taxiway -->
-        <div class="ms-4">
-            <label class="mb-2"><b>Hasil Inpeksi Taxiway</b></label>
-        </div>
-        <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-            <label class="input-group-text" for="inputGroupSelect01">Taxiway</label>
-            <select class="form-select" id="inputGroupSelect01" style="width: 50%;">
-                <option selected>Choose...</option>
-                <option value="1">Serviceable</option>
-                <option value="2">Unserviceable</option>
-            </select>
-        </div>
-        <!-- end inpeksi taxiway -->
+            <!-- upload foto -->
+            <div class="ms-4">
+                <label class="mb-2"><b>Upload Foto Taxiway G</b></label>
+                <input type="file" class="form-control" name="gambar1" id="inputGroupFile01" style="width: 50%;">
+            </div>
+            <div class="ms-4">
+                <label class="mb-2"><b>Upload Foto Taxiway F</b></label>
+                <input type="file" class="form-control" name="gambar2" id="inputGroupFile01" style="width: 50%;">
+            </div>
+            <!-- end upload -->
 
-        <table class="table table-bordered m-4" style="width: 50%;">
-            <tr>
-                <td></td>
-                <td>INSPEKTOR</td>
-            </tr>
-            <tr>
-                <td>NAMA</td>
-                <td><input type="text"></td>
-            </tr>
-        </table>
+            <!-- start catatan -->
+            <div class="form-floating mt-3 ms-4 mb-3">
+                <textarea class="form-control" name="catatan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 50%;"></textarea>
+                <label for="floatingTextarea2">Catatan</label>
+            </div>
+            <!-- end catatan -->
+
+            <!-- hasil inpeksi taxiway -->
+            <div class="ms-4">
+                <label class="mb-2"><b>Hasil Inpeksi Taxiway</b></label>
+            </div>
+            <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                <label class="input-group-text" for="inputGroupSelect01">Taxiway</label>
+                <select class="form-select" name="taxiway" id="inputGroupSelect01" style="width: 50%;">
+                    <option selected disabled>Choose...</option>
+                    <option value="1">Serviceable</option>
+                    <option value="2">Unserviceable</option>
+                </select>
+            </div>
+            <!-- end inpeksi taxiway -->
+
+            <table class="table table-bordered m-4" style="width: 50%;">
+                <tr>
+                    <td></td>
+                    <td>INSPEKTOR</td>
+                </tr>
+                <tr>
+                    <td>NAMA</td>
+                    <td><input type="text" name="inspector"></td>
+                </tr>
+            </table>
 
 
-        <button type="submit" class="btn btn-secondary ms-4">
-            <h5>Submit</h5>
-        </button>
+            <button type="submit" name="tambah_taxiway" class="btn btn-secondary ms-4">
+                <h5>Submit</h5>
+            </button>
+        </form>
     </div>
 
-
     <div id="apronContent" class="content">
-        <h5 class="ms-5">Apron</h5>
-        <div class="form-table">
-            <div class="ms-5">
-                <label for="datepicker" class="form-label mb-3">Tanggal:</label>
-                <input type="date" id="datepicker" name="datepicker" class="form-control">
-            </div>
-            <div class="me-5">
-                <label for="timepicker" class="form-label mb-3">Waktu:</label>
-                <input type="time" id="timepicker" name="timepicker" class="form-control">
-            </div>
-        </div>
-        <div class="row m-4">
-            <div class="col-6">
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <h5 class="me-3">Area Apron</h5>
+        <form action="functions.php" id="apronForm" method="POST" enctype="multipart/form-data">
+            <h5 class="ms-5">Apron</h5>
+            <div class="form-table">
+                <div class="ms-5">
+                    <label for="datepicker" class="form-label mb-3">Tanggal:</label>
+                    <input type="date" id="datepicker" name="datepicker" class="form-control">
                 </div>
-
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="kondisipermukaan">Kondisi Permukaan</label>
-                    <select class="form-select" id="kondisipermukaan" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="marka">Marka</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="fod">FOD</label>
-                    <select class="form-select" id="fod" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="rubberdeposit">Rubber Deposit</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Tipis">Tipis</option>
-                        <option value="Tebal">Tebal</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="obstacle">Obstacle</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="birdstrike">Bird Strike / Wild Animal</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Ada">Ada</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="pagar">Pagar Perimeter</label>
-                    <select class="form-select" id="marka" style="width: 50%;">
-                        <option selected></option>
-                        <option value="Baik">Baik</option>
-                        <option value="Tidak">Tidak</option>
-                    </select>
+                <div class="me-5">
+                    <label for="timepicker" class="form-label mb-3">Waktu:</label>
+                    <input type="time" id="timepicker" name="timepicker" class="form-control">
                 </div>
             </div>
-        </div>
+            <div class="row m-4">
+                <div class="col-6">
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <h5 class="me-3">Area Apron</h5>
+                        <select class="form-select" id="kondisipermukaan" name="area" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="13">F</option>
+                            <option value="31">G</option>
+                        </select>
+                    </div>
 
-        <!-- upload foto -->
-        <div class="ms-4">
-            <label class="mb-2"><b>Upload Foto</b></label>
-            <input type="file" class="form-control" id="inputGroupFile01" style="width: 50%;">
-        </div>
-        <!-- end upload -->
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="kondisipermukaan">Kondisi Permukaan</label>
+                        <select class="form-select" id="kondisipermukaan" name="kondisipermukaan" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="marka">Marka</label>
+                        <select class="form-select" id="marka" name="marka" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="fod">FOD</label>
+                        <select class="form-select" id="fod" name="fod" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="rubberdeposit">Rubber Deposit</label>
+                        <select class="form-select" id="marka" name="rubber" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Tipis">Tipis</option>
+                            <option value="Tebal">Tebal</option>
+                        </select>
+                    </div>
 
-        <!-- start catatan -->
-        <div class="form-floating mt-3 ms-4 mb-3">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 50%;"></textarea>
-            <label for="floatingTextarea2">Catatan</label>
-        </div>
-        <!-- end catatan -->
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="obstacle">Obstacle</label>
+                        <select class="form-select" id="marka" name="obstacle" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="birdstrike">Bird Strike / Wild Animal</label>
+                        <select class="form-select" id="marka" name="bird" style="width: 50%;">
+                            <option selected></option>
+                            <option value="Ada">Ada</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="pagar">Pagar Perimeter</label>
+                        <select class="form-select" id="marka" name="pagar" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        <!-- hasil inpeksi taxiway -->
-        <div class="ms-4">
-            <label class="mb-2"><b>Hasil Inpeksi</b></label>
-        </div>
-        <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-            <label class="input-group-text" for="inputGroupSelect01">Apron</label>
-            <select class="form-select" id="inputGroupSelect01" style="width: 50%;">
-                <option selected>Choose...</option>
-                <option value="1">Serviceable</option>
-                <option value="2">Unserviceable</option>
-            </select>
-        </div>
-        <!-- end inpeksi taxiway -->
+            <!-- upload foto -->
+            <div class="ms-4">
+                <label class="mb-2"><b>Upload Foto</b></label>
+                <input type="file" class="form-control" name="gambar4" id="inputGroupFile01" style="width: 50%;">
+            </div>
+            <!-- end upload -->
 
-        <table class="table table-bordered m-4" style="width: 50%;">
-            <tr>
-                <td></td>
-                <td>INSPEKTOR</td>
-            </tr>
-            <tr>
-                <td>NAMA</td>
-                <td><input type="text"></td>
-            </tr>
-        </table>
+            <!-- start catatan -->
+            <div class="form-floating mt-3 ms-4 mb-3">
+                <textarea class="form-control" name="catatan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 50%;"></textarea>
+                <label for="floatingTextarea2">Catatan</label>
+            </div>
+            <!-- end catatan -->
+
+            <!-- hasil inpeksi taxiway -->
+            <div class="ms-4">
+                <label class="mb-2"><b>Hasil Inpeksi</b></label>
+            </div>
+            <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                <label class="input-group-text" for="inputGroupSelect01">Apron</label>
+                <select class="form-select" id="inputGroupSelect01" name="apron" style="width: 50%;">
+                    <option selected disabled>Choose...</option>
+                    <option value="1">Serviceable</option>
+                    <option value="2">Unserviceable</option>
+                </select>
+            </div>
+            <!-- end inpeksi taxiway -->
+
+            <table class="table table-bordered m-4" style="width: 50%;">
+                <tr>
+                    <td></td>
+                    <td>INSPEKTOR</td>
+                </tr>
+                <tr>
+                    <td>NAMA</td>
+                    <td><input type="text" name="inspektor"></td>
+                </tr>
+            </table>
 
 
-        <button type="submit" class="btn btn-secondary ms-4">
-            <h5>Submit</h5>
-        </button>
+            <button type="submit" name="tambah_apron" class="btn btn-secondary ms-4">
+                <h5>Submit</h5>
+            </button>
+        </form>
     </div>
     </div>
     <!-- end content -->

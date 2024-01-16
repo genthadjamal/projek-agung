@@ -43,44 +43,45 @@
     <div class="container">
         <div class="row">
             <div class="col">
-
                 <div class="ms-4 mt-3">
                     <h3>Report</h3>
                 </div>
-                <div class="ms-4">
-                    <label for="datepicker" class="form-label">Tanggal:</label>
-                    <input type="date" class="form-control" id="datepicker" name="datepicker" style="width: 50%;">
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="inputGroupSelect01">Categories</label>
-                    <select class="form-select" id="inputGroupSelect01" style="width: 50%;">
-                        <option selected></option>
-                        <option value="1">FOD</option>
-                        <option value="2">Case</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
-                    <label class="input-group-text" for="inputGroupSelect01">Location</label>
-                    <select class="form-select" id="inputGroupSelect01" style="width: 50%;">
-                        <option selected></option>
-                        <option value="1">Runway </option>
-                        <option value="2">Taxiway G</option>
-                        <option value="2">Taxiway F</option>
-                        <option value="2">Apron</option>
+                <form action="functions.php" method="POST" enctype="multipart/form-data">
+                    <div class="ms-4">
+                        <label for="datepicker" class="form-label">Tanggal:</label>
+                        <input type="date" class="form-control" id="datepicker" name="datepicker" style="width: 50%;">
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="inputGroupSelect01">Categories</label>
+                        <select class="form-select" id="inputGroupSelect01" name="categories" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="fod">FOD</option>
+                            <option value="case">Case</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 mt-3 ms-4" style="width: 50%;">
+                        <label class="input-group-text" for="inputGroupSelect01">Location</label>
+                        <select class="form-select" id="inputGroupSelect01" name="loc" style="width: 50%;">
+                            <option selected disabled></option>
+                            <option value="runway">Runway </option>
+                            <option value="taxiway_g">Taxiway G</option>
+                            <option value="taxiway_f">Taxiway F</option>
+                            <option value="apron">Apron</option>
 
-                    </select>
-                </div>
-                <div class="ms-4">
-                    <label for="">Report By</label>
-                </div>
-                <div class="ms-4 mt-3">
-                    <input class="form-control" type="text" style="width: 50%;">
-                </div>
-                <div class="ms-4 mt-3">
-                    <button type="submit" class="btn btn-secondary ms-4">
-                        <h5>Report</h5>
-                    </button>
-                </div>
+                        </select>
+                    </div>
+                    <div class="ms-4">
+                        <label for="">Report By</label>
+                    </div>
+                    <div class="ms-4 mt-3">
+                        <input class="form-control" name="report_by" type="text" style="width: 50%;">
+                    </div>
+                    <div class="ms-4 mt-3">
+                        <button type="submit" name="report" class="btn btn-secondary ms-4">
+                            <h5>Report</h5>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
